@@ -139,7 +139,12 @@ const Gallery: React.FC<GalleryProps> = ({ movies }) => {
                                     </div>
                                 </div>
                                 <div className="item-gallery__text">
-                                    <div className="item-gallery__title">{name}</div>
+                                    <div className="item-gallery__title">{name} ({year})</div>
+                                    {view &&
+                                        <div className='item-gallery__description'>
+                                            {description}
+                                        </div>
+                                    }
                                     <div className='item-gallery__genres'>
                                         {view && genres.map(genre => (
                                             <div className='item-gallery__item-genre' key={genre}>
@@ -147,7 +152,6 @@ const Gallery: React.FC<GalleryProps> = ({ movies }) => {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="item-gallery__year">{year}</div>
                                 </div>
                             </div>
                         )
